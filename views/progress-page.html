@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Knob Example</title>
+  <style>
+    .knob-container {
+      width: 150px;
+      height: 150px;
+      margin: 30px auto;
+      position: relative;
+    }
+    .knob-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: bold;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="knob-container" id="knob1"></div>
+
+  <!-- Load ProgressBar.js -->
+  <script src="https://cdn.jsdelivr.net/npm/progressbar.js"></script>
+
+  <script>
+    // Create the knob with ProgressBar.js
+    const knob = new ProgressBar.Circle('#knob1', {
+      strokeWidth: 10,
+      color: '#3498db',
+      trailColor: '#eee',
+      trailWidth: 5,
+      duration: 1400,
+      easing: 'easeInOut',
+      text: {
+        value: '0%',
+        style: {
+          color: '#000',
+          position: 'absolute',
+          left: '50%',
+          top: '50%',
+          padding: 0,
+          margin: 0,
+          transform: 'translate(-50%, -50%)',
+          fontSize: '20px',
+        }
+      },
+      step: function(state, circle) {
+        const val = Math.round(circle.value() * 100);
+        circle.setText(val + '%');
+      }
+    });
+
+    // Simulate fetching a value from a database (static for now)
+    const dynamicValue = 72; // Replace this with a fetched value later
+
+    // Animate knob to the dynamic value
+    knob.animate(dynamicValue / 100);
+  </script>
+
+</body>
+</html>

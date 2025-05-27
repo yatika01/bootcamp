@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Header</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-size: larger;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .navbar-brand img {
+      height: 40px;
+    }
+
+    .profile-img {
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .nav-link {
+      margin-right: 10px;
+    }
+
+    @media (max-width: 991.98px) {
+      .desktop-nav {
+        display: none !important;
+      }
+      .mobile-toggle {
+        display: block !important;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .mobile-toggle {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg bg-light shadow py-2 w-100">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand" href="#">
+        <img src="https://via.placeholder.com/40" alt="Logo">
+        <span class="fw-bold">MySite</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="d-flex align-items-center ms-auto desktop-nav">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Courses</a>
+        <a href="#" class="nav-link">Contact</a>
+
+        <button class="btn position-relative me-3">
+          <i class="bi bi-bell fs-5"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+        </button>
+
+        <img src="https://via.placeholder.com/40" class="profile-img" alt="Profile">
+      </div>
+
+      <!-- Hamburger Toggle -->
+      <button class="btn mobile-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+        <i class="bi bi-list fs-3"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Offcanvas Mobile Menu -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <a href="#" class="nav-link">Home</a>
+      <a href="#" class="nav-link">Courses</a>
+      <a href="#" class="nav-link">Contact</a>
+      <hr />
+      <button class="btn w-100 mb-3">
+        <i class="bi bi-bell me-2"></i> Notifications
+      </button>
+      <div class="d-flex align-items-center">
+        <img src="https://via.placeholder.com/40" class="profile-img me-2" alt="Profile">
+        <span>My Profile</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bund

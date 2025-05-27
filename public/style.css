@@ -1,0 +1,93 @@
+.page-wrapper {
+      min-height: 100vh;
+      background-color: #f8f9fa;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      /* padding: 2rem ; */
+    }
+
+    .body-wrapper {
+      background: #fff;
+      width: 100%;
+      transition: .2s ease-in;
+      max-width: 1000px;
+      /* border-radius: 12px; */
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      /* padding: 2rem; */
+    }
+
+    @media (max-width: 768px) {
+      .main-wrapper {
+        padding: 0;
+      }
+
+      .body-wrapper {
+        border-radius: 0;
+        padding: 1rem;
+      }
+    }
+.notification-container {
+      background-color: rgb(228, 226, 226);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      padding:0px 10px;
+      padding-top: 6px;
+      
+    }
+
+    .profile-img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: contain;
+
+    }  
+.header-nav .notifications {
+  inset: 8px -15px auto auto !important;
+}
+.header-nav .notifications .notification-item i {
+  margin: 0 20px 0 10px;
+  font-size: 24px;
+}
+
+.header-nav .notifications .notification-item:hover {
+  background-color: #f6f9ff;
+}
+.search-box-text {
+      font-family: 'Lexend', sans-serif;
+      color: #1C170D;
+      font-size: 16px;
+      background-color: #77BBDD52;
+      line-height: 24px;
+      font-weight: 400;
+    }
+.search-container {
+    position: relative;
+}
+
+.search-input {
+    height: 50px;
+    border-radius: 30px;
+    padding-left: 35px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.course-label {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .course-label {
+    width: 25%;
+  }
+}
