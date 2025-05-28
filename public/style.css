@@ -16,7 +16,9 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
       /* padding: 2rem; */
     }
-
+    #mainContainer {
+      max-width: 120vh;
+    }
     @media (max-width: 768px) {
       .main-wrapper {
         padding: 0;
@@ -26,6 +28,9 @@
         border-radius: 0;
         padding: 1rem;
       }
+      #mainContainer {
+      padding: 0;
+    }
     }
 .notification-container {
       background-color: rgb(228, 226, 226);
@@ -55,6 +60,13 @@
 .header-nav .notifications .notification-item:hover {
   background-color: #f6f9ff;
 }
+
+.table-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: auto;
+        }
 .search-box-text {
       font-family: 'Lexend', sans-serif;
       color: #1C170D;
