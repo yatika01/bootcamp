@@ -19,6 +19,9 @@
 /* #mainContainer{
  max-width: 120vh;
 } */
+    #mainContainer {
+      max-width: 120vh;
+    }
     @media (max-width: 768px) {
       .main-wrapper {
         padding: 0;
@@ -32,6 +35,9 @@
       /* #mainContainer{
         padding: 0;
       } */
+      #mainContainer {
+      padding: 0;
+    }
     }
 
 
@@ -63,6 +69,13 @@
 .header-nav .notifications .notification-item:hover {
   background-color: #f6f9ff;
 }
+
+.table-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: auto;
+        }
 .search-box-text {
       font-family: 'Lexend', sans-serif;
       color: #1C170D;
