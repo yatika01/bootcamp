@@ -4,10 +4,444 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Courses</title>
+  <title>EduPath - My Courses</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900&display=swap"
+    rel="stylesheet">
+  <!-- bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- google Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- custom css -->
+  <link href="/public/styles/style.css" rel="stylesheet">
+  <!-- courses-page-css -->
+  <link rel="stylesheet" href="/public/styles/courses-page.css">
 </head>
 
 <body>
+  <div class="page-wrapper">
+    <div class="body-wrapper">
+      <!-- Navigation Header -->
+      <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary border-bottom">
+        <div class="container-fluid d-flex justify-content-between align-items-center w-100">
+
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-book h5 pt-2"></i>
+            <h5 class="mb-0 fw-bold d-none d-lg-block">tectr&#8734p</h5>
+          </div>
+
+          <ul class="navbar-nav flex-row gap-3 ms-auto me-2 d-none d-lg-flex">
+            <li class="nav-item"><a class="nav-link fw-semibold" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link fw-semibold" href="#">Courses</a></li>
+            <li class="nav-item"><a class="nav-link fw-semibold" href="#">Progress</a></li>
+          </ul>
+
+          <!-- Offcanvas Menu -->
+          <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="mobileOffcanvas"
+            aria-labelledby="mobileOffcanvasLabel" style="width: 50%;">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title fw-bold" id="mobileOffcanvasLabel">Menu</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav flex-column gap-2">
+                <li class="nav-item"><a class="nav-link fw-semibold" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="#">Courses</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold" href="#">Progress</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Profile + Toggle + notification(mobile only) -->
+          <div class="d-flex align-items-center gap-3">
+            <!-- Notification Dropdown -->
+            <div class="nav-item dropdown">
+              <button class="btn p-0 border-0 bg-transparent" type="button" id="notifDropdown" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <div class="d-flex justify-content-center align-items-cente">
+                  <div class="notification-container">
+                    <i class="bi bi-bell fs-5 "></i>
+                  </div>
+
+                </div>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                <li class="dropdown-header">
+                  You have 4 new notifications
+                  <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+
+                <li class="notification-item px-3">
+                  <i class="bi bi-exclamation-circle text-warning"></i>
+                  <div>
+                    <h4>Lorem Ipsum</h4>
+                    <p>Quae dolorem earum veritatis oditseno</p>
+                    <p>30 min. ago</p>
+                  </div>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                </li>
+                <li class="notification-item px-3">
+                  <i class="bi bi-exclamation-circle text-warning"></i>
+                  <div>
+                    <h4>Lorem Ipsum</h4>
+                    <p>Quae dolorem earum veritatis oditseno</p>
+                    <p>30 min. ago</p>
+                  </div>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                </li>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Profile Dropdown -->
+            <div class="dropdown">
+              <button class="btn p-0 border-0 bg-transparent" type="button" id="profileDropdown"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="/public/images/profile.jpg" alt="User" class="profile-img">
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                <li>
+                  <h6 class="dropdown-header">Yatika Kumawat</h6>
+                </li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </div>
+
+
+            <!-- Toggle Button (only visible on mobile) -->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#mobileOffcanvas" aria-controls="mobileOffcanvas" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container mt-4">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-6">
+            <div class="search-container">
+              <input type="text" class="form-control search-input search-box-text"
+                placeholder="Search here to find any course">
+              <i class="fas fa-search search-icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <main class="container-fluid px-3 px-lg-5 py-4">
+
+        <!-- Your Top Courses Section -->
+        <section class="mb-5">
+          <div class="row align-items-center mb-4">
+            <div class="col">
+              <h2 class="section-title fs-3 mb-0">Your Top Courses</h2>
+            </div>
+            <div class="col-auto">
+              <a href="#" class="view-all-link">View All</a>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <!-- Course Card 1 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="card course-card h-100">
+                <div class="course-image"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBvEOZ_tkTXFPOCrgQ9a63fQ3P5TbldghC3ZzCTJeFo15uiklAdgXPWlqNWXz9CQ2WJmBpw6Bx9zHHgILLGsFK2Sern6qfrF8qlOlz-p-sOvL6vxWn_3_mmLw9ENrFp-17_sLmgPMZPV3W_WGPNCHXaRjxWVkidFbvwLWZNgYQRcJR5Y27TNypI2PSmheyzotT-gXl-7rmzSrBmS9mqqvl5GiDzKSo7jNs2JhKvvc91D5qtDMD3yEx9WArvQiP3OjYPHoylNlT4rz-O');">
+                </div>
+                <div class="card-body d-flex flex-column ">
+                  <h5 class="card-title fw-bold">Advanced Data Analysis</h5>
+                  <p class="text-muted text-muted-small mb-1">Mentor: Dr. Evelyn Reed</p>
+                  <p class="card-text text-muted mb-3 flex-grow-1">
+                    Dive deep into Python for complex data manipulation and visualization.
+                  </p>
+
+                  <div class="rating-stars mb-2">
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star_half</span>
+                    <small class="text-muted ms-1">(4.5)</small>
+                  </div>
+
+                  <p class="text-muted text-muted-small mb-3">Last accessed: 2 days ago</p>
+                  <button class="btn btn-primary w-100 mt-auto">Enroll</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course Card 2 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="card course-card h-100">
+                <div class="course-image"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAs0bdMreCguBNBjjmYbMW4yK_Qu0IAa5vTykVOtAlkQk15Fu0490Z-Kr36fvV1x_yTTB-akAXS9enhA0x1ZG1evXpC6Szwv6nLw1kNFoEJb3tzEUDsMso5zufTit9_Mah0INUSB2fmBlKfAO1MI7VQSHujqPDSC4pQBG0DHIaesAG4YKcQUV6nKmsRYR4OMWbVqG9dMV-7FffkMizoMNzYrpJES9YkdwcRq6wZZiBlrALE1RsCGQJm51wkZpwBnjc8pDFlrWWb_bul');">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title fw-bold">Introduction to AI Ethics</h5>
+                  <p class="text-muted text-muted-small mb-1">Mentor: Dr. Kenji Tanaka</p>
+                  <p class="card-text text-muted mb-3 flex-grow-1">Explore the ethical implications of artificial
+                    intelligence and develop frameworks for responsible AI development and deployment.</p>
+
+                  <div class="rating-stars mb-2">
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star_border</span>
+                    <small class="text-muted ms-1">(4.2)</small>
+                  </div>
+
+                  <p class="text-muted text-muted-small mb-3">Last accessed: 5 days ago</p>
+                  <button class="btn btn-primary w-100 mt-auto">Enroll</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course Card 3 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="card course-card h-100">
+                <div class="course-image"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYxQlansu6-GngQEXnbnlVymaLvLkfGppjJDmqWkYH3oaCZTPD8ZuX7R8PFzL1NlaYvHwYGmPchogx8Q81OMb-dqPK25k_gj-HY3DO6i50BjScy_V4kLvhbyPOdegAvZ_gEPVJ0EQtBBJcWdXi-3oMJRet4pbG4WtTtEZ2jA86_GB2g0zn1mhjDztFB43aIiu9ZY-DaFuLApMpQMcUQzb7X6WZ_jfLPjK1ArblgGzjp7stKBV5Ng8KAr2LpjRLTqXS03kFJcBfJO-f');">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title fw-bold">Creative Writing Workshop</h5>
+                  <p class="text-muted text-muted-small mb-1">Mentor: Ms. Aisha Khan</p>
+                  <p class="card-text text-muted mb-3 flex-grow-1">Unleash your creativity through practical exercises
+                    in
+                    fiction, poetry, and scriptwriting. Receive constructive feedback and refine your writing voice.</p>
+
+                  <div class="rating-stars mb-2">
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <small class="text-muted ms-1">(4.9)</small>
+                  </div>
+
+                  <p class="text-muted text-muted-small mb-3">Last accessed: Yesterday</p>
+                  <button class="btn btn-primary w-100 mt-auto">Enroll</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Recently Added Courses Section -->
+        <section class="mb-5">
+          <div class="row align-items-center mb-4">
+            <div class="col">
+              <h2 class="section-title fs-3 mb-0">Recently Added Courses</h2>
+            </div>
+            <div class="col-auto">
+              <a href="#" class="view-all-link">View All</a>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <!-- Course Card 4 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="card course-card h-100">
+                <div class="course-image"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAs0bdMreCguBNBjjmYbMW4yK_Qu0IAa5vTykVOtAlkQk15Fu0490Z-Kr36fvV1x_yTTB-akAXS9enhA0x1ZG1evXpC6Szwv6nLw1kNFoEJb3tzEUDsMso5zufTit9_Mah0INUSB2fmBlKfAO1MI7VQSHujqPDSC4pQBG0DHIaesAG4YKcQUV6nKmsRYR4OMWbVqG9dMV-7FffkMizoMNzYrpJES9YkdwcRq6wZZiBlrALE1RsCGQJm51wkZpwBnjc8pDFlrWWb_bul');">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title fw-bold">Machine Learning Fundamentals</h5>
+                  <p class="text-muted text-muted-small mb-1">Mentor: Dr. Marcus Cole</p>
+                  <p class="card-text text-muted mb-3 flex-grow-1">Grasp the core concepts and algorithms of machine
+                    learning.</p>
+
+                  <div class="rating-stars mb-2">
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star_border</span>
+                    <small class="text-muted ms-1">(4.0)</small>
+                  </div>
+
+                  <p class="text-muted text-muted-small mb-3">Last accessed: 1 week ago</p>
+                  <button class="btn btn-primary w-100 mt-auto">Enroll</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course Card 5 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="card course-card h-100">
+                <div class="course-image"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYxQlansu6-GngQEXnbnlVymaLvLkfGppjJDmqWkYH3oaCZTPD8ZuX7R8PFzL1NlaYvHwYGmPchogx8Q81OMb-dqPK25k_gj-HY3DO6i50BjScy_V4kLvhbyPOdegAvZ_gEPVJ0EQtBBJcWdXi-3oMJRet4pbG4WtTtEZ2jA86_GB2g0zn1mhjDztFB43aIiu9ZY-DaFuLApMpQMcUQzb7X6WZ_jfLPjK1ArblgGzjp7stKBV5Ng8KAr2LpjRLTqXS03kFJcBfJO-f');">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title fw-bold">Deep Learning Specialization</h5>
+                  <p class="text-muted text-muted-small mb-1">Mentor: Dr. Olivia Bennett</p>
+                  <p class="card-text text-muted mb-3 flex-grow-1">Explore neural networks, CNNs, RNNs, and cutting-edge
+                    deep learning models.</p>
+
+                  <div class="rating-stars mb-2">
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <small class="text-muted ms-1">(5.0)</small>
+                  </div>
+
+                  <p class="text-muted text-muted-small mb-3">Last accessed: Yesterday</p>
+                  <button class="btn btn-primary w-100 mt-auto">Enroll</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course Card 6 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="card course-card h-100">
+                <div class="course-image"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3KM7ivDyNJ5GeibgW7AVNCmFWgScY07Zmd6dvzrU8MbmxDsEXyFn-llH9FIhpnwilUGNS856zRYFLi1m0Na_7C9Gfj-KP_AFaZUucbOf-vIPPMDV0uScunqgRBGZNXv6U5OjvcL2-3FnyoASSvsYK3dGQoqDmj5mnHHZYa_qvtXH_nZmwM8LxTkwauVYK3-cMW5iTF4snSj0tYpqkdR-1HkAAth0tgKm0RvFNq0qs07laR5ZhEfCjb-HUdBbGlnC7EfYAM1DVdqxX');">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title fw-bold">Web Development Bootcamp</h5>
+                  <p class="text-muted text-muted-small mb-1">Mentor: Mr. Alex Chen</p>
+                  <p class="card-text text-muted mb-3 flex-grow-1">Full-stack web development: HTML, CSS, JavaScript,
+                    Node.js, and React.</p>
+
+                  <div class="rating-stars mb-2">
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star_half</span>
+                    <span class="material-icons">star_border</span>
+                    <small class="text-muted ms-1">(3.8)</small>
+                  </div>
+
+                  <p class="text-muted text-muted-small mb-3">Not started</p>
+                  <button class="btn btn-primary w-100 mt-auto">Enroll</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- You Might Be Interested In Section -->
+        <section>
+          <div class="row align-items-center mb-4">
+            <div class="col">
+              <h2 class="section-title fs-3 mb-0">You Might Be Interested In</h2>
+            </div>
+            <div class="col-auto">
+              <a href="#" class="view-all-link">View All</a>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <!-- Course Card 7 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="card course-card h-100">
+                <div class="course-image"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALP5C5jsMO19AZzcgXITY-f9Fyo2C0RF24EpeDPpEduq79it3-zEFyn-PM_s1QL73bUAg2HIbQ4ME4rkwHDfZcUpKcjKA4hmR3paF0pUTDvybRuqY5VPxXPeykWMAWw8fOHCJbwBb_IfCyubq2zBMk4cm8yWUeyTV2FSz-jBoqSa0haQbbOSKfULkgmeJ25uOJa_9dafsmStQS91esX9GUA7yUsU9SrJhyUI0WfdGf1XkedDVx-CPhVVhxCi2-xBwoKSx9lx-FrOcB');">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title fw-bold">Cloud Computing Essentials</h5>
+                  <p class="text-muted text-muted-small mb-1">Mentor: Dr. Samuel Harper</p>
+                  <p class="card-text text-muted mb-3 flex-grow-1">Understand the fundamentals of cloud platforms and
+                    services.</p>
+
+                  <div class="rating-stars mb-2">
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star_half</span>
+                    <span class="material-icons">star_border</span>
+                    <small class="text-muted ms-1">(3.5)</small>
+                  </div>
+
+                  <p class="text-muted text-muted-small mb-3">Not started</p>
+                  <button class="btn btn-outline-secondary w-100 mt-auto">View Course</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course Card 8 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="card course-card h-100">
+                <div class="course-image"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD02twH7ByHfPiR_1QwNWz4QjKt3UsAZac1i_orTZ9IzlZYYFBZgOdy-tdOcrIlZj6dyrBLMtnfQ6G1CD1cNmJ7I2GyXHI8Q5oh9cI4gThfBqP9-oZGl-wxblJRVqfWlVNdmebgOv2omf6wNJNfCSqXbj_t8Ia3Eu1X6a8c2LuEOuBnvLHNbRKMq5Ugs-Z66eEm2qxbRwjG22m_6BZaMdAAMVug06IxUdvMvfCYMpegiEFKpr0ceCaA6hxxYJZoPqYM0c4U0Oz3AHkG');">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title fw-bold">Cybersecurity Fundamentals</h5>
+                  <p class="text-muted text-muted-small mb-1">Mentor: Dr. Sophia Carter</p>
+                  <p class="card-text text-muted mb-3 flex-grow-1">Learn about threats, vulnerabilities, and protective
+                    measures in cybersecurity.</p>
+
+                  <div class="rating-stars mb-2">
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star_half</span>
+                    <small class="text-muted ms-1">(4.7)</small>
+                  </div>
+
+                  <p class="text-muted text-muted-small mb-3">Not started</p>
+                  <button class="btn btn-outline-secondary w-100 mt-auto">View Course</button>
+                </div>
+              </div>
+            </div>
+            <!-- Course Card 8 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="card course-card h-100">
+                <div class="course-image"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD02twH7ByHfPiR_1QwNWz4QjKt3UsAZac1i_orTZ9IzlZYYFBZgOdy-tdOcrIlZj6dyrBLMtnfQ6G1CD1cNmJ7I2GyXHI8Q5oh9cI4gThfBqP9-oZGl-wxblJRVqfWlVNdmebgOv2omf6wNJNfCSqXbj_t8Ia3Eu1X6a8c2LuEOuBnvLHNbRKMq5Ugs-Z66eEm2qxbRwjG22m_6BZaMdAAMVug06IxUdvMvfCYMpegiEFKpr0ceCaA6hxxYJZoPqYM0c4U0Oz3AHkG');">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title fw-bold">Cybersecurity Fundamentals</h5>
+                  <p class="text-muted text-muted-small mb-1">Mentor: Dr. Sophia Carter</p>
+                  <p class="card-text text-muted mb-3 flex-grow-1">Learn about threats, vulnerabilities, and protective
+                    measures in cybersecurity.</p>
+
+                  <div class="rating-stars mb-2">
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star</span>
+                    <span class="material-icons">star_half</span>
+                    <small class="text-muted ms-1">(4.7)</small>
+                  </div>
+
+                  <p class="text-muted text-muted-small mb-3">Not started</p>
+                  <button class="btn btn-outline-secondary w-100 mt-auto">View Course</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

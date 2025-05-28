@@ -1,0 +1,149 @@
+ 
+    :root {
+      --primary-color: #1978e5;
+      --primary-hover: #135ca9;
+      --bg-light: #f8f9fa;
+    }
+
+    body {
+      font-family: 'Manrope', 'Noto Sans', sans-serif;
+      background-color: var(--bg-light);
+    }
+
+    .navbar-brand svg {
+      width: 24px;
+      height: 24px;
+      color: var(--primary-color);
+    }
+
+    .navbar-nav .nav-link.active {
+      color: var(--primary-color) !important;
+      font-weight: 700;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      border-color: var(--primary-hover);
+    }
+
+    .btn-outline-secondary {
+      color: #6c757d;
+      border-color: #dee2e6;
+    }
+
+    .btn-outline-secondary:hover {
+      background-color: #e9ecef;
+      border-color: #dee2e6;
+      color: #495057;
+    }
+
+    .course-card {
+      transition: all 0.3s ease;
+      border: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .course-image {
+      height: 160px;
+      object-fit: cover;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .rating-stars {
+      color: #ffc107;
+    }
+
+    .rating-stars .material-icons {
+      font-size: 18px;
+    }
+
+    .text-muted-small {
+      font-size: 0.75rem;
+    }
+
+    .search-container {
+      position: relative;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #6c757d;
+    }
+
+    .search-input {
+      padding-left: 40px;
+    }
+
+    .notification-btn {
+      width: 40px;
+      height: 40px;
+      background-color: var(--bg-light);
+      border: 1px solid #dee2e6;
+      color: #6c757d;
+    }
+
+    .notification-btn:hover {
+      background-color: #e9ecef;
+    }
+
+    .profile-avatar {
+      width: 40px;
+      height: 40px;
+      border: 2px solid #dee2e6;
+      transition: border-color 0.3s ease;
+    }
+
+    .profile-avatar:hover {
+      border-color: var(--primary-color);
+    }
+
+    .section-title {
+      font-weight: 700;
+      color: #212529;
+    }
+
+    .view-all-link {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+
+    .view-all-link:hover {
+      color: var(--primary-hover);
+    }
+
+    @media (max-width: 768px) {
+      .navbar-collapse {
+        margin-top: 1rem;
+      }
+
+      .search-container {
+        width: 100%;
+        margin: 1rem 0;
+      }
+
+      .course-image {
+        height: 140px;
+      }
+    }
+  
