@@ -16,7 +16,9 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
       /* padding: 2rem; */
     }
-
+/* #mainContainer{
+ max-width: 120vh;
+} */
     @media (max-width: 768px) {
       .main-wrapper {
         padding: 0;
@@ -26,7 +28,13 @@
         border-radius: 0;
         padding: 1rem;
       }
+
+      /* #mainContainer{
+        padding: 0;
+      } */
     }
+
+
 .notification-container {
       background-color: rgb(228, 226, 226);
       width: 42px;
@@ -91,3 +99,16 @@
     width: 25%;
   }
 }
+
+ .progress-circle {
+      transform: rotate(-360deg);
+    }
+
+    .progress-circle .bg {
+      stroke-linecap: round;
+    }
+
+    .progress-circle .progress {
+      stroke-linecap: round;
+      transition: stroke-dashoffset 0.7s ease;
+    }
